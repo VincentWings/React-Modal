@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Mac system files
+.DS_Store
+
+# VS Code settings (optional)
+.vscode/
+
+# Babel output if not using dist/
+*.babel.js
+
+# Env files (just in case)
+.env
+.env.local
+.env.production
+.env.development

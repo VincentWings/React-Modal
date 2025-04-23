@@ -17,7 +17,7 @@ A lightweight and flexible modal component for React, inspired by [jquery-modal]
 ## Installation
 
 ```bash
-npm install react-modal-manager
+npm install @vincentwings/react-modal
 ```
 
 ---
@@ -30,7 +30,7 @@ npm install react-modal-manager
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { ModalProvider } from 'react-modal-manager'
+import { ModalProvider } from '@vincentwings/react-modal'
 
 ReactDOM.render(
   <ModalProvider>
@@ -46,7 +46,7 @@ ReactDOM.render(
 
 ```jsx
 import React from 'react'
-import { useModal } from 'react-modal-manager'
+import { useModal } from '@vincentwings/react-modal'
 
 function ExampleModalTrigger() {
   const { openModal, closeModal } = useModal()
@@ -84,12 +84,12 @@ function ExampleModalTrigger() {
 | `backgroundColor` | `string` | `'#fff'`              | Background color of the modal                        |
 | `textColor`       | `string` | `'#2a2a2a'`           | Text color inside the modal                          |
 | `borderRadius`    | `string` | `'12px'`              | Border radius of the modal                           |
-| `closeText`       | `string` | `'×'`                 | Text for the close button                            |
+| `closeText`       | `string` | `'\u00d7'`            | Text for the close button                            |
 | `fadeDuration`    | `number` | `300`                 | Animation duration in milliseconds                   |
 | `fadeDelay`       | `number` | `0.5`                 | Delay before showing modal (in seconds)              |
 | `escapeClose`     | `boolean`| `true`                | Close modal on `Escape` key                          |
 | `clickClose`      | `boolean`| `true`                | Close modal on overlay click                         |
-| `showClose`       | `boolean`| `true`                | Show the close (×) button                            |
+| `showClose`       | `boolean`| `true`                | Show the close (\u00d7) button                        |
 | `useTransform`    | `boolean`| `true`                | Animate modal with a vertical slide effect           |
 | `useBorderRadius` | `boolean`| `true`                | Apply border radius to modal                         |
 
@@ -100,3 +100,10 @@ function ExampleModalTrigger() {
 - Traps focus inside the modal while open
 - Supports `Escape` key to close (if `escapeClose` is enabled)
 - Adds `aria-modal` and `role="dialog"` to the modal overlay
+
+---
+
+## Example Project
+
+Want to see it in action? Check it out:
+👉 https://github.com/VincentWings/HRnet
