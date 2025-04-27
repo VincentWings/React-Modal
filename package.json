@@ -1,10 +1,22 @@
 {
   "name": "@vincentwings/react-modal",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A lightweight and flexible modal component for React, inspired by jquery-modal.",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs", 
+  "module": "./dist/index.js", 
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "test": "echo \"No test specified\" && exit 1"
   },
   "keywords": [
@@ -26,9 +38,7 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.27.0",
-    "@babel/core": "^7.26.10",
-    "@babel/preset-env": "^7.26.9",
-    "@babel/preset-react": "^7.26.3"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
   }
 }
