@@ -29,17 +29,18 @@ npm install @vincentwings/react-modal
 Open `src/main.jsx` and wrap your app with `ModalProvider`. Add the necessary imports:
 
 ```jsx
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import App from './App'
 import { ModalProvider } from '@vincentwings/react-modal'
 import '@vincentwings/react-modal/dist/index.css'
 
-ReactDOM.render(
-  <ModalProvider>
-    <App />
-  </ModalProvider>,
-  document.getElementById('root')
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <ModalProvider>
+      <App />
+    </ModalProvider>
+  </StrictMode>,
 )
 ```
 
