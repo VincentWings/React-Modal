@@ -24,13 +24,16 @@ npm install @vincentwings/react-modal
 
 ## Usage
 
-### 1. Wrap your app with `ModalProvider`
+### 1. Modify your `main.jsx`
+
+Open `src/main.jsx` and wrap your app with `ModalProvider`. Add the necessary imports:
 
 ```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { ModalProvider } from '@vincentwings/react-modal'
+import '@vincentwings/react-modal/dist/index.css'
 
 ReactDOM.render(
   <ModalProvider>
@@ -42,20 +45,22 @@ ReactDOM.render(
 
 ---
 
-### 2. Use the `useModal` hook to open modals from anywhere
+### 2. Modify your `App.jsx`
+
+Open `src/App.jsx` and use the `useModal` hook to open modals from anywhere, for example:
 
 ```jsx
 import React from 'react'
-import { useModal } from '@vincentwings/react-modal'
+import { ModalProvider, useModal } from '@vincentwings/react-modal'
 
-function ExampleModalTrigger() {
+function ModalExample() {
   const { openModal, closeModal } = useModal()
 
-  const handleOpen = () => {
+  const handleClick = () => {
     openModal(
       <div style={{ textAlign: 'center' }}>
-        <h2>Modal Title</h2>
-        <p>This is a simple modal content.</p>
+        <h2>Hello from the modal 👋</h2>
+        <p>This modal is managed by your custom hook.</p>
         <button onClick={closeModal}>Close</button>
       </div>,
       {
@@ -70,8 +75,21 @@ function ExampleModalTrigger() {
     )
   }
 
-  return <button onClick={handleOpen}>Open Modal</button>
+  return <button onClick={handleClick}>Open Modal</button>
 }
+
+function App() {
+  return (
+    <ModalProvider>
+      <div className="app">
+        <h1>React Modal Demo</h1>
+        <ModalExample />
+      </div>
+    </ModalProvider>
+  )
+}
+
+export default App
 ```
 
 ---
@@ -84,12 +102,12 @@ function ExampleModalTrigger() {
 | `backgroundColor` | `string` | `'#fff'`              | Background color of the modal                        |
 | `textColor`       | `string` | `'#2a2a2a'`           | Text color inside the modal                          |
 | `borderRadius`    | `string` | `'12px'`              | Border radius of the modal                           |
-| `closeText`       | `string` | `'\u00d7'`            | Text for the close button                            |
+| `closeText`       | `string` | `'×'`            | Text for the close button                            |
 | `fadeDuration`    | `number` | `300`                 | Animation duration in milliseconds                   |
 | `fadeDelay`       | `number` | `0.5`                 | Delay before showing modal (in seconds)              |
 | `escapeClose`     | `boolean`| `true`                | Close modal on `Escape` key                          |
 | `clickClose`      | `boolean`| `true`                | Close modal on overlay click                         |
-| `showClose`       | `boolean`| `true`                | Show the close (\u00d7) button                        |
+| `showClose`       | `boolean`| `true`                | Show the close (×) button                            |
 | `useTransform`    | `boolean`| `true`                | Animate modal with a vertical slide effect           |
 | `useBorderRadius` | `boolean`| `true`                | Apply border radius to modal                         |
 
