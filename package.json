@@ -1,6 +1,6 @@
 {
   "name": "@vincentwings/react-modal",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A lightweight and flexible modal component for React, inspired by jquery-modal.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -10,7 +10,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./dist/index.css": "./dist/index.css" 
+    "./dist/index.css": "./dist/index.css"
   },
   "files": [
     "dist",
