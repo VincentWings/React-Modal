@@ -125,4 +125,4 @@ export default App
 ## Example Project
 
 Want to see it in action? Check it out:
-👉 https://github.com/VincentWings/HRnet
+👉 https://react-modal-demo-vincentwings.vercel.app
